@@ -1,12 +1,19 @@
-import {Request, Response} from 'express';
+import {Request, Response, response} from 'express';
 
 import Photo from '../models/Photos';
 
-export function getPhotos(req: Request, res: Response){
+export async function getPhotos(req: Request, res: Response): Promise<Response>{
+    const photos = await Photo.find();
+    return res.json(photos);
 
 }
 
-export async function createPhoto(req: Request, res: Response){
+export async function getPhoto(req: Request, res: Response): Promise<Response>{
+    const photo = await Photo.findById(req.params.id);
+    return res.json(photo);
+}
+
+export async function createPhoto(req: Request, res: Response): Promise<Response>{
     const { title, description } = req.body;
     
     const newPhoto = {
