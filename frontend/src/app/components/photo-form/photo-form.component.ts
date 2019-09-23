@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PhotoserviceService} from '../../services/photoservice.service'
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -12,7 +13,7 @@ interface HtmlInputEvent extends Event {
 export class PhotoFormComponent implements OnInit {
 file: File;
 photoSelected: string | ArrayBuffer;
-  constructor() { }
+  constructor(private photoserviceService: PhotoserviceService) { }
 
   ngOnInit() {
   }
@@ -23,6 +24,14 @@ photoSelected: string | ArrayBuffer;
       reader.onload = e => this.photoSelected = reader.result;
       reader.readAsDataURL(this.file);
     }
+    
+  }
+  uploadPhoto(title: HTMLInputElement, description: HTMLTextAreaElement): boolean{
+    // console.log(title.value)
+    // console.log(description.value)
+    this.photoserviceService.createPhoto(title.value, description.value, this.file)
+    .subscribe(res => console.log(res), err => console.log(err));
+    return false;
   }
 
 }
