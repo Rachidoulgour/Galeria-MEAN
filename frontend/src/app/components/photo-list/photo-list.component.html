@@ -1,1 +1,13 @@
-<p>photo-list works!</p>
+<div class="row">
+    <div class="col" *ngFor="let photo of photos">
+        <div class="card">
+            <div class="card-header">
+                {{photo.title}}
+            </div>
+            <img [src]="'http://localhost:3000/' + photo.imagePath" alt="no photo">
+            <div class="card-body">
+                {{photo.description}}
+            </div>
+        </div>
+    </div>
+</div>
