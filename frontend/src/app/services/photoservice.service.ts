@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
+
 import {Photo} from '../interfaces/Photo';
 
 @Injectable({
@@ -22,6 +23,15 @@ export class PhotoserviceService {
 
   getPhoto(){
     return this.http.get<Photo[]>(this.URI);
+  }
+  getimage(id: string){
+    return this.http.get<Photo>(`${this.URI}/${id}`)
+  }
+  deletePhoto(id: string) {
+    return this.http.delete(`${this.URI}/${id}`);
+  }
+  updatePhoto(id: string, title: string, description: string){
+    return this.http.put(`${this.URI}/${id}`, {title, description});
   }
 
 }
