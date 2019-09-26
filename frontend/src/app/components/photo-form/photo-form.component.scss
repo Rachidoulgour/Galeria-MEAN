@@ -1,0 +1,40 @@
+.foto-form{
+    background-color: rgb(228, 225, 235);
+    padding: 1rem 2rem;
+    .card{
+    margin: 5rem 2rem;
+    .card-header{
+        margin: 5rem 2rem;
+    }
+    .card-body{
+        margin: 4rem 2rem;
+        form{
+            .form-group{
+                margin-top: 1rem;
+                input{
+                    padding: .5rem;
+                }
+                textarea{
+                    padding: .5rem;
+                }
+                
+            }
+            .d-none{
+                // all: unset;
+                // margin-top: 2rem;
+                
+            }
+            .img-fluid{
+                width: 30rem;
+            }
+            button{
+                all: unset;
+                color: #ffffff;
+                padding: .5rem 1rem;
+                background-color: blueviolet;
+                cursor: pointer;
+            }
+        }
+    }
+}
+}

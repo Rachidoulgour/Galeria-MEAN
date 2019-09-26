@@ -1,0 +1,18 @@
+.navigation{
+    display: flex;
+    background-color: rgba(145, 43, 119, 0.322);
+    ul{
+        
+        display: flex;
+        flex-direction: row;
+        
+        li{
+            all: unset;
+            margin: .5rem 1rem;
+            a{
+                text-decoration: none;
+                color: #ffffff;
+            }
+        }
+    }
+}
