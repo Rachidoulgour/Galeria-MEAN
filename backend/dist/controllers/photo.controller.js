@@ -54,7 +54,7 @@ async function updatePhoto(req, res) {
     }, { new: true });
     return res.json({
         message: 'Successfully updated',
-        updatePhoto
+        updatedPhoto
     });
 }
 exports.updatePhoto = updatePhoto;

@@ -4,22 +4,23 @@ import {PhotoListComponent} from './components/photo-list/photo-list.component'
 import {PhotoFormComponent} from './components/photo-form/photo-form.component';
 import {PhotoPreviewComponent} from './components/photo-preview/photo-preview.component';
 
+
 const routes: Routes = [
   {
-    path: 'public',
+    path: 'photos',
     component: PhotoListComponent
   },
   {
-    path:'public/new',
+    path:'photos/new',
     component: PhotoFormComponent
   },
   {
-    path: 'public/:id',
+    path: 'photos/:id',
     component: PhotoPreviewComponent
   },
   {
     path: '',
-    redirectTo: '/public',
+    redirectTo: '/photos',
     pathMatch: 'full'
   }
 ];

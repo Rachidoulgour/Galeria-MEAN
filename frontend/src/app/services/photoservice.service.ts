@@ -9,7 +9,7 @@ import {Photo} from '../interfaces/Photo';
 })
 export class PhotoserviceService {
 
-  URI = 'http://localhost:3000/api/photos'
+  URI = 'http://localhost:3500/api/photos';
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +21,7 @@ export class PhotoserviceService {
     return this.http.post(this.URI, fdata);
   }
 
-  getPhoto(){
+  getPhotos(){
     return this.http.get<Photo[]>(this.URI);
   }
   getimage(id: string){

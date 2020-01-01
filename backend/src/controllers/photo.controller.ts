@@ -1,8 +1,8 @@
-import {Request, Response, response} from 'express';
+import {Request, Response} from 'express';
 import path from 'path';
 import fs from 'fs-extra';
 
-import Photo from '../models/Photos';
+import Photo, { IPhoto } from '../models/Photos';
 
 export async function getPhotos(req: Request, res: Response): Promise<Response>{
     const photos = await Photo.find();
@@ -51,6 +51,6 @@ export async function updatePhoto(req: Request, res: Response): Promise<Response
     }, {new: true});
     return res.json({
         message: 'Successfully updated',
-        updatePhoto
+        updatedPhoto
     })
 }

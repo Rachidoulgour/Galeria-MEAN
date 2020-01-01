@@ -1,14 +1,14 @@
-import express from 'express';
+import express, { Application} from 'express';
 import morgan from 'morgan';
 import path from 'path';
 import cors from 'cors';
 
-const app = express();
+const app: Application = express();
 
 import indexRoutes from './routes/index';
 
 //Settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3500);
 
 //Middlewares
 app.use(morgan('dev'));
@@ -19,6 +19,7 @@ app.use(express.json());
 app.use('/api', indexRoutes);
 
 //strore public files
-app.use('./public', express.static(path.resolve('public')));
+//app.use('/uploads/imagenes', express.static(path.resolve('uploads')));
+app.use('/uploads', express.static('uploads'));
 
 export default app;

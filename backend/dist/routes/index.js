@@ -8,8 +8,8 @@ const router = express_1.Router();
 const photo_controller_1 = require("../controllers/photo.controller");
 const multer_1 = __importDefault(require("../libraries/multer"));
 router.route('/photos')
-    .post(multer_1.default.single('image'), photo_controller_1.createPhoto)
-    .get(photo_controller_1.getPhotos);
+    .get(photo_controller_1.getPhotos)
+    .post(multer_1.default.single('image'), photo_controller_1.createPhoto);
 router.route('/photos/:id')
     .get(photo_controller_1.getPhoto)
     .delete(photo_controller_1.deletePhoto)
