@@ -8,15 +8,15 @@
         
         li{
             all: unset;
-            margin: .5rem 1rem;
+            margin: .1rem 1rem;
             a{
                 text-decoration: none;
                 color: #ffffff;
                 font-size: 1.5rem;
-                padding: .5rem .5rem;
+                padding: .4rem .5rem;
                 &:hover {
                     background-color: rgb(228, 218, 236);
-                    padding: .5rem .5rem;
+                    padding: .4rem .5rem;
                     transition: ease .3s;
                 }
             }
