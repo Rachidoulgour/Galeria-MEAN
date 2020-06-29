@@ -5,9 +5,30 @@
             <li>
                 <a routerLink="/photos">Mis Fotos</a>
             </li>
-            <li>
-                <a routerLink="/photos/new">Cargar Foto</a>
-            </li>
+            
+        </ul>
+        <ul>
+            <ng-container *ngIf="!userService.loggedIn(); else loggedIn">
+                <li>
+                    <a routerLink="/signup">Registrarse</a>
+                </li>
+                <li>
+                    <a routerLink="/login">Entrar</a>
+                </li>
+            </ng-container>
+            <ng-template #loggedIn>
+                <li>
+                    <a routerLink="/photos/new">Cargar Foto</a>
+                </li>
+                <li>
+                    <a routerLink="/login" (click)="userService.logOut()">Salir</a>
+                </li>
+                <li>
+                    <a routerLink="/profil">Perfil</a>
+                </li>
+            </ng-template>
+                   
+            
             <ul>
 
             </ul>

@@ -17,13 +17,8 @@ export class PhotoListComponent implements OnInit {
     },
     err => console.log(err))
   };
-  selectedCard(id: string){
-    this.router.navigate(['/photos, id']);
-    // this.photoserviceService.getimage(id)
-    // .subscribe(
-    //   res =>console.log(res),
-    //   err =>console.log(err)
-    // )
+  selectedPub(id: string){
+    if(localStorage.getItem('token')){this.router.navigate(['/photos', id])};
   }
 
 }

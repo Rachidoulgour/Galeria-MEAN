@@ -32,7 +32,7 @@ photoSelected: string | ArrayBuffer;
     // console.log(title.value)
     // console.log(description.value)
     this.photoserviceService.createPhoto(title.value, description.value, this.file)
-    .subscribe(res => {this.router.navigate(['/public']);
+    .subscribe(res => {this.router.navigate(['/photos']);
     }, err => console.log(err));
     return false;
   }

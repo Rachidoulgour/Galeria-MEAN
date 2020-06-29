@@ -3,7 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import {PhotoListComponent} from './components/photo-list/photo-list.component'
 import {PhotoFormComponent} from './components/photo-form/photo-form.component';
 import {PhotoPreviewComponent} from './components/photo-preview/photo-preview.component';
-
+import { SignupComponent} from './components/signup/signup.component';
+import { LoginComponent} from './components/login/login.component';
+import { ProfilComponent} from './components/profil/profil.component';
+import { AuthenticGuard } from './authentic.guard';
 
 const routes: Routes = [
   {
@@ -17,6 +20,19 @@ const routes: Routes = [
   {
     path: 'photos/:id',
     component: PhotoPreviewComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'profil',
+    component: ProfilComponent,
+    canActivate: [AuthenticGuard]
   },
   {
     path: '',
