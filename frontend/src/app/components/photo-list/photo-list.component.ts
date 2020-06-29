@@ -18,7 +18,7 @@ export class PhotoListComponent implements OnInit {
     err => console.log(err))
   };
   selectedPub(id: string){
-    this.router.navigate(['/photos', id]);
+    if(localStorage.getItem('token')){this.router.navigate(['/photos', id])};
   }
 
 }

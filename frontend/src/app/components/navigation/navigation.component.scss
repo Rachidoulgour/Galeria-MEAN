@@ -1,25 +1,30 @@
 .navigation{
     display: flex;
     background-color: rgba(145, 43, 119, 0.322);
-    ul{
-        
+    nav{
         display: flex;
         flex-direction: row;
+        ul{
         
-        li{
-            all: unset;
-            margin: .1rem 1rem;
-            a{
-                text-decoration: none;
-                color: #ffffff;
-                font-size: 1.5rem;
-                padding: .4rem .5rem;
-                &:hover {
-                    background-color: rgb(228, 218, 236);
+            display: flex;
+            flex-direction: row;
+            
+            li{
+                all: unset;
+                margin: .1rem 1rem;
+                a{
+                    text-decoration: none;
+                    color: #ffffff;
+                    font-size: 1.5rem;
                     padding: .4rem .5rem;
-                    transition: ease .3s;
+                    &:hover {
+                        background-color: rgb(228, 218, 236);
+                        padding: .4rem .5rem;
+                        transition: ease .3s;
+                    }
                 }
             }
         }
     }
+    
 }

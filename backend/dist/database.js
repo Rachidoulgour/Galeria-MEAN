@@ -7,7 +7,8 @@ const mongoose_1 = __importDefault(require("mongoose"));
 async function startConnection() {
     await mongoose_1.default.connect('mongodb://localhost/photo-galeria-db', {
         useNewUrlParser: true,
-        useFindAndModify: false
+        useFindAndModify: false,
+        useUnifiedTopology: true
     });
     console.log('database is connected');
 }
